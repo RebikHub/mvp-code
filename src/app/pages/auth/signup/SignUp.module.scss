@@ -1,0 +1,92 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.wrapperContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35%;
+  width: 100%;
+  height: 100%;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.875rem;
+  width: 50%;
+
+  & main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.right {
+  background-color: $color-blackest;
+
+  & header {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.left {
+  background: radial-gradient(50% 50% at 50% 50%, #2c2c2c 0%, #262626 100%);
+
+  & header {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6.875rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.625rem;
+
+  & p {
+    @include fontSettings(
+      $font-size-lg,
+      $font-regular,
+      rgba(255, 255, 255, 0.3)
+    );
+    cursor: pointer;
+  }
+
+  &_btn {
+    width: 26.875rem;
+
+    @include phones {
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  & > div {
+    width: 37.5rem;
+
+    @include phones {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,189 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $color-txt-darkest;
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  max-width: 64.375rem;
+
+  &_active {
+    border: 1px solid $color-dark-green;
+  }
+
+  @include phones {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.title {
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+  margin-bottom: 0.625rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include phones {
+    margin-bottom: 15px;
+  }
+}
+
+.label {
+  display: block;
+  position: absolute;
+  top: -5%;
+  left: 5%;
+  border-radius: 1.25rem;
+  background-color: $color-txt-darkest;
+  padding: 5px 0;
+  width: 15.625rem;
+  text-align: center;
+  @include fontSettings($font-size-base, $font-semi-bold, $color-txt);
+
+  &_active {
+    background-color: $color-green;
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 31.25rem;
+
+  @include phones {
+    width: auto;
+  }
+
+  &_card {
+    @include phones {
+      & div {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+
+  @include phones {
+    width: fit-content;
+  }
+}
+
+.order {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  border-radius: 50%;
+  background-color: $color-body;
+  width: 7.8125rem;
+  height: 7.8125rem;
+
+  @include fontSettings($font-size-lg, $font-regular, $color-txt);
+}
+
+.circle {
+  position: absolute;
+  transform: rotate(-45deg);
+  clip-path: polygon(50% 50%, 100% 0, 100% 0);
+  box-shadow: inset 0 0 1.25rem $color-green;
+  border-radius: 50%;
+  width: 115%;
+  height: 115%;
+
+  &_first {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%);
+  }
+
+  &_second {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  &_third {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  &_fourth {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 100% 0);
+  }
+
+  &_activated {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 100% 0);
+    box-shadow: inset 0 0 1.25rem $color-txt-gray;
+  }
+}
+
+.request {
+  @include fontSettings($font-size-base, $font-semi-bold, $color-txt);
+  align-self: flex-end;
+  cursor: pointer;
+  text-shadow: 0px 0px 2px $color-txt;
+
+  @include phones {
+    margin-left: auto;
+  }
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+
+  &_title {
+    @include fontSettings(
+      $font-size-sm,
+      $font-regular,
+      rgba(255, 255, 255, 0.4)
+    );
+  }
+  &_days {
+    @include fontSettings($font-size-sm, $font-regular, $color-txt);
+  }
+}
+
+.modalSend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.375rem 2.5rem;
+
+  & h2 {
+    @include fontSettings($font-size-6xl, $font-semi-bold, $color-green);
+    text-align: center;
+  }
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+    line-height: 120%;
+    text-align: center;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}

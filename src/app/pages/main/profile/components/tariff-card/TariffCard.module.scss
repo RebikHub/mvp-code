@@ -1,0 +1,85 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.65rem;
+  box-sizing: border-box;
+  box-shadow: 1px 0.658rem 0.8rem 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3.71425rem;
+  background: $color-body;
+  padding: 2.1rem;
+  width: 19.2rem;
+  height: fit-content;
+  text-align: center;
+
+  &_green {
+    background: $color-green;
+  }
+
+  & h3 {
+    @include fontSettings(1.8rem, $font-regular, $color-txt);
+
+    @include phones {
+      font-size: 30px;
+    }
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.price {
+  & span {
+    display: block;
+    text-align: center;
+    @include fontSettings(4.2108rem, $font-semi-bold, $color-txt);
+
+    @include phones {
+      font-size: 67.2px;
+    }
+  }
+
+  &_desc {
+    @include fontSettings(1.2rem, $font-regular, $color-txt-gray);
+
+    @include phones {
+      font-size: 20px;
+    }
+  }
+
+  &_day {
+    margin-top: 0.625rem;
+    @include fontSettings($font-size-sm, $font-regular, $color-txt-gray);
+
+    @include phones {
+      font-size: 14px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  padding: 1.25rem 1.5rem;
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+
+    & p {
+      @include fontSettings($font-size-base, $font-regular, $color-txt);
+
+      @include phones {
+        font-size: 16px;
+      }
+    }
+  }
+}

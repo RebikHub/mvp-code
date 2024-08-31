@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.layout {
+  box-sizing: border-box;
+  background: radial-gradient(50% 50% at 50% 50%, #2c2c2c 0%, #181818 100%);
+  background-image: url('@/assets/images/finger-auth-layout.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3.875rem;
+  width: 100%;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+  }
+}

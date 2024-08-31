@@ -1,0 +1,32 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.875rem;
+  margin-bottom: 1.875rem;
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.button {
+  width: fit-content;
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.empty {
+  @include fontSettings($font-size-2xl, $font-regular, $color-txt-soft);
+}

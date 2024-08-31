@@ -1,0 +1,70 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    margin-bottom: 3.75rem;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.submit {
+  margin-top: 1.25rem;
+  margin-left: auto;
+  width: fit-content;
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.permission {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 5.1px 0px rgba(163, 203, 56, 0.47);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  max-width: 50.875rem;
+
+  @include phones {
+    width: 100%;
+  }
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+    line-height: 140%;
+    text-align: justify;
+  }
+
+  & span {
+    color: $color-green;
+  }
+}
+
+.sign {
+  margin-left: auto;
+  width: fit-content;
+
+  @include phones {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

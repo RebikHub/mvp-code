@@ -1,0 +1,110 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $color-dark-green;
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  max-width: 64.375rem;
+
+  @include phones {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @include phones {
+    width: 65%;
+  }
+
+  &_body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    & div {
+      display: flex;
+      gap: 5px;
+
+      @include phones {
+        flex-direction: column;
+      }
+    }
+
+    & span {
+      @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+    }
+
+    & p {
+      @include fontSettings($font-size-base, $font-regular, $color-txt);
+    }
+  }
+}
+
+.title {
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include phones {
+    margin-bottom: 15px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.order {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  border-radius: 50%;
+  background-color: $color-body;
+  width: 7.8125rem;
+  height: 7.8125rem;
+
+  @include fontSettings($font-size-lg, $font-regular, $color-txt);
+
+  &_file {
+    border: 1px solid $color-dark-green;
+  }
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  @include fontSettings($font-size-sm, $font-regular, rgba(255, 255, 255, 0.4));
+
+  &_file {
+    @include fontSettings($font-size-sm, $font-regular, $color-txt);
+    padding: 3%;
+    text-align: center;
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}

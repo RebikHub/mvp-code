@@ -1,0 +1,43 @@
+@font-face {
+  font-style: normal;
+  font-weight: 250;
+  src: local('rs'), url('../../assets/fonts/RS-extralight.otf'),
+    format('truetype');
+  font-family: 'rs';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: local('rs'), url('../../assets/fonts/RS-regular.otf'), format('truetype');
+  font-family: 'rs';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  src: local('rs'), url('../../assets/fonts/RS-semibold.otf'),
+    format('truetype');
+  font-family: 'rs';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  src: local('rs'), url('../../assets/fonts/RS-extrabold.otf'),
+    format('truetype');
+  font-family: 'rs';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  src: local('urw'), url('../../assets/fonts/urwgothicl_demi.ttf'),
+    format('truetype');
+  font-family: 'urw';
+  font-display: swap;
+}

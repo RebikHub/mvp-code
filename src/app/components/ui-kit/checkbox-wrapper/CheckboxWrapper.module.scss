@@ -1,0 +1,38 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $color-white;
+  border-radius: 2.75rem;
+  background-color: inherit;
+  padding: 1.25rem 2.1875rem;
+  width: 50.875rem;
+  resize: none;
+
+  @include phones {
+    padding: 1.2rem 2rem;
+    width: 100%;
+  }
+}
+
+.label {
+  position: absolute;
+  top: -19%;
+  left: 4%;
+  @include fontSettings($font-size-xs, $font-regular, $color-black);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem;
+  background-color: $color-white;
+  padding: 0.3125rem 1.25rem;
+
+  @include phones {
+    top: -13%;
+    left: 7%;
+  }
+}

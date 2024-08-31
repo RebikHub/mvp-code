@@ -1,0 +1,18 @@
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  gap: 2rem;
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.card {
+  margin-top: 4.35rem;
+
+  @include phones {
+    margin: 0;
+  }
+}

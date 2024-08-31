@@ -1,0 +1,258 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  width: 37.8125rem;
+
+  &_green {
+    border: 1px solid $color-green;
+  }
+
+  &_gray {
+    border: 1px solid $color-gray;
+  }
+
+  @include phones {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  top: 125%;
+  left: 72%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  z-index: 20;
+  box-shadow: 0px 4px 5.1px 0px $color-dark-green;
+
+  border-radius: 1.25rem;
+  background: $color-darkest;
+  padding: 1.25rem;
+  width: max-content;
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  & p {
+    @include fontSettings($font-size-base, $font-regular, $color-txt);
+    &:hover {
+      @include fontSettings($font-size-base, $font-regular, $color-txt-soft);
+    }
+    @include phones {
+      font-size: 16px;
+    }
+  }
+
+  @include phones {
+    left: 35%;
+  }
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include phones {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  @include phones {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &_header {
+    @include fontSettings($font-size-xl, $font-regular, $color-gray);
+  }
+
+  &_content {
+    @include fontSettings($font-size-base, $font-regular, $color-txt);
+  }
+}
+
+.wrapperCases {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-right: auto;
+}
+
+.cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  background-color: $color-gray;
+  padding: 0.9375rem 1.875rem;
+  width: fit-content;
+
+  @include fontSettings($font-size-base, $font-semi-bold, $color-txt);
+}
+
+.files {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-height: 5.625rem;
+  overflow: auto;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  & > p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt-soft);
+    margin-right: auto;
+
+    @include phones {
+      font-size: 1rem;
+    }
+  }
+}
+
+.empty {
+  @include fontSettings($font-size-2xl, $font-regular, $color-txt-soft);
+}
+
+.modal {
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 0;
+
+  & header {
+    box-sizing: border-box;
+    padding: 0 2.1875rem;
+  }
+
+  & button {
+    margin-right: auto;
+    margin-left: 2.1875rem;
+
+    @include phones {
+      margin: 0;
+      width: 93%;
+    }
+  }
+}
+
+.crypto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0px 1px 4.2px 0px rgba(163, 203, 56, 0.66);
+  border-radius: 1.25rem;
+  padding: 1rem 2.1875rem;
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & p {
+      @include fontSettings($font-size-lg, $font-semi-bold, $color-green);
+
+      @include phones {
+        white-space: normal;
+      }
+    }
+
+    @include phones {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  @include phones {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+.fileTxt {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.625rem;
+  width: 100%;
+}
+
+.txt {
+  @include fontSettings($font-size-base, $font-semi-bold, $color-dark-green);
+}
+
+.fileActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  width: 18%;
+
+  & p {
+    @include fontSettings($font-size-lg, $font-regular, $color-txt);
+  }
+
+  @include phones {
+    width: 10%;
+  }
+}
+
+.checked {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 2rem;
+  min-height: 2rem;
+}

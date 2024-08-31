@@ -1,0 +1,88 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 5%;
+
+  @include phones {
+    padding-right: 0;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 1rem;
+  width: 100%;
+
+  & div {
+    display: flex;
+    gap: 0.625rem;
+
+    @include phones {
+      flex-direction: column;
+    }
+  }
+
+  & span {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt-gray);
+  }
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.oferta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow: 0px 1px 5.1px 0px rgba(163, 203, 56, 0.47);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  max-width: 64.1875rem;
+
+  white-space: pre-wrap;
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+    line-height: 140%;
+    text-align: justify;
+  }
+
+  & span {
+    color: $color-green;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  & label {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+  }
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.button {
+  @include phones {
+    margin-top: 3rem;
+    width: 100%;
+  }
+}

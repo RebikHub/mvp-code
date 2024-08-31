@@ -1,0 +1,50 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../../../assets/images/badge.png');
+  background-position: 95% 95%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.code {
+  display: flex;
+  align-items: baseline;
+  gap: 2.75rem;
+
+  & p {
+    @include fontSettings(18.6rem, $font-regular, $color-txt);
+    @include phones {
+      font-size: 9.6rem;
+    }
+  }
+
+  @include phones {
+    margin: auto;
+  }
+}
+
+.description {
+  @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+  margin-bottom: 8.4375rem;
+}
+
+.logo {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.toggle {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}

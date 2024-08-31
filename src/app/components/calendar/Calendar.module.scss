@@ -1,0 +1,204 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 0.5rem $color-green;
+  border-radius: 2.5rem;
+  background: $color-body;
+  padding: 1.875rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.25rem;
+}
+
+.prev {
+  cursor: pointer;
+}
+
+.next {
+  cursor: pointer;
+}
+
+.thead {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.875rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+
+  @include fontSettings($font-size-base, $font-semi-bold, $color-gray);
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6875rem;
+  width: 100%;
+
+  &_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 1.875rem;
+  height: 1.875rem;
+  @include fontSettings($font-size-sm, $font-regular, $color-txt);
+
+  &:hover {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-color: $color-green;
+  }
+
+  &_active {
+    background-color: $color-green;
+  }
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.selects {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+
+  &_day {
+    width: 2.1875rem;
+  }
+
+  &_month {
+    width: 8.125rem;
+  }
+
+  &_year {
+    width: 4.0625rem;
+  }
+}
+
+.selectDate {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  & > p {
+    text-transform: capitalize;
+  }
+
+  .options {
+    display: flex;
+    position: absolute;
+    top: 103%;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 0.625rem;
+    z-index: 12;
+    box-sizing: border-box;
+    box-shadow: 0 0.125rem 0.3125rem 0 rgba(153, 153, 153, 0.19);
+    border-radius: 10px;
+    background-color: $color-body;
+    padding: 0.625rem 0;
+    width: 100%;
+    min-width: fit-content;
+    min-height: 100%;
+    max-height: 20rem;
+    overflow: hidden;
+    overflow: auto;
+
+    &_calendar {
+      position: absolute;
+      top: 101%;
+      right: 0;
+      left: 0;
+      z-index: 13;
+    }
+
+    & > li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      cursor: pointer;
+      border-bottom: 0.0625rem solid $color-gray;
+      padding: 0.625rem;
+      text-overflow: ellipsis;
+      @include fontSettings($font-size-base, $font-regular, $color-txt);
+
+      &:hover {
+        transition: all 0.3s ease;
+        background-color: $color-green;
+        color: $color-txt;
+        font-weight: $font-semi-bold;
+      }
+    }
+
+    &_none {
+      display: none;
+    }
+  }
+}
+
+.hours,
+.minutes {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border: 1px solid $color-white;
+  border-radius: 0.625rem;
+  width: 7.5rem;
+  height: 2.25rem;
+  @include fontSettings($font-size-base, $font-regular, $color-txt);
+  background-color: $color-body;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.625rem;
+  width: 100%;
+
+  & span {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  @include phones {
+    width: fit-content;
+  }
+}

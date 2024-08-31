@@ -1,0 +1,105 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.recipient {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-gray;
+  padding: 1.25rem 0;
+  max-width: 64.375rem;
+
+  @include phones {
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.content,
+.title,
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.title {
+  @include phones {
+    gap: 0.6rem;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.name {
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+  &_dark {
+    @include fontSettings($font-size-xl, $font-semi-bold, $color-txt-gray);
+  }
+}
+
+.label {
+  @include fontSettings($font-size-xl, $font-regular, $color-txt-dark);
+
+  &_dark {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt-darkest);
+  }
+}
+
+.text {
+  @include fontSettings($font-size-xl, $font-regular, $color-txt);
+
+  &_dark {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt-gray);
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @include phones {
+    justify-content: space-between;
+  }
+}
+
+.cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  background-color: $color-gray;
+  padding: 0.9375rem 1.875rem;
+  width: fit-content;
+  height: fit-content;
+  @include fontSettings($font-size-base, $font-semi-bold, $color-txt);
+  &_dark {
+    @include fontSettings($font-size-base, $font-semi-bold, $color-txt-gray);
+    background-color: $color-dark;
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & svg {
+    cursor: pointer;
+  }
+
+  @include phones {
+    gap: 20px;
+  }
+}

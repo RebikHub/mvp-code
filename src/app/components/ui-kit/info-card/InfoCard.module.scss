@@ -1,0 +1,27 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+
+  & div {
+    display: flex;
+    gap: 5px;
+  }
+
+  & span {
+    @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+    min-width: fit-content;
+  }
+
+  & p {
+    @include fontSettings($font-size-base, $font-regular, $color-txt);
+    max-width: 14rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

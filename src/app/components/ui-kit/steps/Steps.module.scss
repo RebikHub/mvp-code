@@ -1,0 +1,25 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+
+.steps {
+  display: flex;
+  gap: 40px;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-white);
+}
+
+.total {
+  color: $color-dark;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.nextStep {
+  cursor: pointer;
+}

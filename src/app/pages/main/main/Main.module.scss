@@ -1,0 +1,73 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.main {
+  display: flex;
+  width: 100%;
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15%;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6.25rem;
+  margin-left: 4.375rem;
+}
+
+.right {
+  margin-top: 7.6875rem;
+  width: 100%;
+
+  & h2 {
+    text-align: center;
+    @include fontSettings($font-size-4xl, $font-regular, $color-txt);
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  gap: 4rem;
+  margin-top: 3.75rem;
+  width: 94%;
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  & p {
+    @include fontSettings(
+      $font-size-xl,
+      $font-regular,
+      rgba(255, 255, 255, 0.5)
+    );
+
+    @include phones {
+      text-align: center;
+    }
+  }
+
+  @include phones {
+    flex-direction: column-reverse;
+  }
+}
+
+.profile {
+  @include phones {
+    margin-top: 35px;
+    margin-bottom: 45px;
+  }
+}

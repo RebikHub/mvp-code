@@ -1,0 +1,27 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+
+  & p {
+    background: var(
+      --1,
+      linear-gradient(102deg, #a3cb38 3.99%, #81aa12 85.98%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    width: max-content;
+    font-style: normal;
+    font-weight: $font-semi-bold;
+    font-size: $font-size-sm;
+    line-height: normal;
+    font-family: $font-urw;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+  }
+}

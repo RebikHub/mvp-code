@@ -1,0 +1,153 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $color-white;
+  border-radius: 2.75rem;
+  background-color: inherit;
+  max-height: 3.75rem;
+  @include fontSettings($font-size-sm, $font-regular, $color-txt);
+
+  &_long {
+    padding: 1.25rem 1.25rem 1.25rem 2.1875rem;
+    width: 50.875rem;
+
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-txt);
+    }
+
+    @include phones {
+      width: 100%;
+    }
+  }
+
+  &_short {
+    padding: 1.25rem 1.25rem 1.25rem 1.5625rem;
+    width: 37.5rem;
+
+    &::placeholder {
+      @include fontSettings($font-size-lg, $font-regular, $color-txt);
+    }
+
+    @include phones {
+      width: 100%;
+    }
+  }
+
+  &_error {
+    border: 1px solid $color-red;
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-red);
+    }
+  }
+
+  &_search {
+    padding-left: 11%;
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+    }
+  }
+
+  &:focus {
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+    }
+  }
+}
+
+.iconSearch {
+  position: absolute;
+  top: 33%;
+  left: 4%;
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: $color-txt;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px inherit;
+}
+
+.label {
+  position: absolute;
+  transition:
+    transform 0.3s ease-out,
+    font-size 0.3s ease-out;
+  pointer-events: none;
+  font-weight: $font-semi-bold;
+
+  &_long {
+    top: 1.4375rem;
+    left: 2.1875rem;
+  }
+
+  &_short {
+    top: 1.4375rem;
+    left: 1.25rem;
+  }
+}
+
+.active {
+  @include fontSettings($font-size-xs, $font-regular, $color-black);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem;
+  background-color: $color-white;
+  padding: 0.3125rem 1.25rem;
+
+  &_long {
+    transform: translateY(-2.125rem);
+  }
+
+  &_short {
+    transform: translate(0.4375rem, -2.125rem);
+  }
+
+  &_error {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}
+
+.eye {
+  position: absolute;
+  cursor: pointer;
+
+  &_short {
+    top: 1rem;
+    left: 90%;
+  }
+
+  &_long {
+    top: 1rem;
+    left: 93%;
+  }
+
+  @include phones {
+    left: 90%;
+  }
+}
+
+.error {
+  margin-top: 0.625rem;
+  margin-left: 1.25rem;
+  @include fontSettings($font-size-xs, $font-regular, $color-red);
+}

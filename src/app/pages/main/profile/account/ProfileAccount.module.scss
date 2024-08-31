@@ -1,0 +1,54 @@
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: fit-content;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.checkboxesData {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.checkboxesNotify {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.submit {
+  margin-left: auto;
+  width: fit-content;
+  @include phones {
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
+
+.calendar {
+  @include phones {
+    width: 100%;
+  }
+}
+
+.info {
+  margin-top: 3rem;
+  & > div {
+    width: 50.875rem;
+
+    @include phones {
+      width: 100%;
+    }
+  }
+}

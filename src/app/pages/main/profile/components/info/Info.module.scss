@@ -1,0 +1,45 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.info,
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  gap: 1.25rem;
+  padding: 2.75rem 0;
+}
+
+.item {
+  gap: 0.8125rem;
+
+  & h3 {
+    @include fontSettings($font-size-4xl, $font-regular, $color-txt);
+  }
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt-gray);
+  }
+}
+
+.update {
+  display: flex;
+  gap: 1.5625rem;
+  width: max-content;
+
+  @include phones {
+    gap: 0;
+    width: 100%;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  margin-left: auto;
+  text-transform: uppercase;
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+  text-shadow: 0px 0px 4px $color-txt;
+}

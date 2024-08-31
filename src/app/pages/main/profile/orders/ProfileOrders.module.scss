@@ -1,0 +1,69 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 1.25rem;
+  margin-bottom: 2.8125rem;
+
+  @include phones {
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 44px;
+    width: 100%;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1.875rem;
+  background: transparent;
+  padding: 0.625rem;
+  text-decoration: none;
+  @include fontSettings($font-size-base, $font-regular, $color-txt);
+
+  &_active {
+    background: #a3cb38;
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  & p {
+    @include fontSettings(
+      $font-size-xl,
+      $font-regular,
+      rgba(255, 255, 255, 0.5)
+    );
+  }
+}
+
+.sort {
+  margin-right: auto;
+
+  @include phones {
+    margin: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid $color-gray;
+  padding-top: 4.0625rem;
+  padding-right: 1%;
+  padding-bottom: 3.125rem;
+  padding-left: 1%;
+  max-width: 11.25rem;
+}
+
+.main {
+  @include fontSettings($font-size-lg, $font-regular, $color-txt);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  cursor: pointer;
+  margin-top: 6.25rem;
+  margin-bottom: auto;
+}
+
+.grades {
+  display: flex;
+  gap: 1.25rem;
+
+  & svg {
+    cursor: pointer;
+  }
+}
+
+.toggle {
+  position: fixed;
+  top: 92%;
+}

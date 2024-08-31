@@ -1,0 +1,133 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  padding-bottom: 15%;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 9%;
+  margin-left: 9%;
+  width: fit-content;
+
+  & > h3 {
+    @include fontSettings($font-size-4xl, $font-regular, $color-txt-dark);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &_title {
+    display: flex;
+    flex-direction: column;
+    & > h3 {
+      @include fontSettings($font-size-4xl, $font-regular, $color-txt-dark);
+      @include phones {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    & > h4 {
+      @include fontSettings($font-size-4xl, $font-regular, $color-txt);
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @include phones {
+        font-size: $font-size-3xl;
+      }
+    }
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+
+  @include phones {
+    width: 100%;
+  }
+
+  & > h3 {
+    @include fontSettings($font-size-4xl, $font-regular, $color-txt);
+    margin-bottom: 4rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.finger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include phones {
+    margin-bottom: 15%;
+  }
+}
+
+.icon {
+  margin-top: 4rem;
+  margin-bottom: 5.625rem;
+
+  @include phones {
+    margin-top: 1rem;
+  }
+}
+
+.info {
+  position: fixed;
+  bottom: 3%;
+
+  @include phones {
+    bottom: 3%;
+    z-index: 20;
+  }
+}
+
+.title {
+  margin-bottom: 1.875rem;
+
+  & > h3 {
+    @include fontSettings($font-size-2xl, $font-regular, $color-green);
+    word-wrap: break-word;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 0.9375rem;
+  margin-top: 3.125rem;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  @include fontSettings($font-size-xl, $font-semi-bold, $color-txt);
+}

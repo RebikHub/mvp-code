@@ -1,0 +1,182 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.feedbackContainer {
+  display: flex;
+  position: absolute;
+  top: 77%;
+  left: 83%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: url('@/assets/images/icon-background.svg');
+  background-position: center;
+  background-size: cover;
+  background-color: $color-darkest;
+  width: fit-content;
+  width: 3.1875rem;
+  height: fit-content;
+  height: 3.1875rem;
+
+  @include phones {
+    left: 79%;
+    width: 51px;
+    height: 51px;
+  }
+}
+
+.feedbackOptions {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  &::after {
+    display: block;
+    border: 1.5px solid $color-gray;
+    border-radius: 50%;
+    width: 5.625rem;
+    height: 5.625rem;
+    content: '';
+
+    @include phones {
+      z-index: 2;
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  @include phones {
+    z-index: 2;
+  }
+}
+
+.grades {
+  display: flex;
+  gap: 0.6rem;
+  & svg {
+    cursor: pointer;
+  }
+}
+
+.survey,
+.review,
+.contactUs {
+  position: absolute;
+}
+
+.survey_text,
+.review_text,
+.contactUs_text {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.1875rem;
+  background-color: $color-txt-darkest;
+  padding: 0.625rem 0.9375rem 0.625rem 2.125rem;
+  min-width: max-content;
+  @include fontSettings($font-size-xs, $font-regular, $color-txt);
+  z-index: -1;
+
+  @include phones {
+    padding: 0.625rem 2.5rem 0.625rem 0.9375rem;
+  }
+}
+
+.review {
+  top: -30%;
+  left: 100%;
+
+  @include phones {
+    top: -165%;
+    left: 28%;
+  }
+
+  &_text {
+    top: 17%;
+    left: 50%;
+
+    @include phones {
+      right: 20%;
+      left: -170%;
+      z-index: 0;
+    }
+  }
+}
+
+.survey {
+  top: 50%;
+  left: 115%;
+
+  @include phones {
+    top: -107%;
+    left: 28%;
+  }
+
+  &_text {
+    top: 17%;
+    left: 50%;
+
+    @include phones {
+      right: 20%;
+      left: -180%;
+      z-index: 0;
+    }
+  }
+}
+
+.contactUs {
+  top: 116%;
+  left: 42%;
+
+  @include phones {
+    top: -50%;
+    left: 28%;
+  }
+
+  &_text {
+    top: 17%;
+    left: 50%;
+
+    @include phones {
+      right: 20%;
+      left: -255%;
+      z-index: 0;
+    }
+  }
+}
+
+.icon {
+  @include phones {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.modalSend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.375rem 2.5rem;
+  max-width: 35vw;
+
+  @include phones {
+    max-width: none;
+  }
+
+  & h2 {
+    @include fontSettings($font-size-6xl, $font-semi-bold, $color-green);
+    text-align: center;
+  }
+
+  & p {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+    line-height: 120%;
+    text-align: center;
+  }
+}

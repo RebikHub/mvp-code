@@ -1,0 +1,14 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.title {
+  @include fontSettings($font-size-5xl, $font-semi-bold, $color-txt);
+  width: 44.6875rem;
+  text-align: center;
+
+  @include phones {
+    width: 100%;
+    font-size: $font-size-2xl;
+  }
+}

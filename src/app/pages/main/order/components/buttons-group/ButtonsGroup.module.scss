@@ -1,0 +1,16 @@
+@import 'src/app/styles/mixins.scss';
+
+.buttons {
+  display: flex;
+  gap: 0.9375rem;
+  margin-top: 3.125rem;
+
+  @include phones {
+    flex-direction: column;
+    width: 100%;
+
+    & button {
+      width: 100%;
+    }
+  }
+}

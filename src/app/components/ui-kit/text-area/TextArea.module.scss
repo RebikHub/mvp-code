@@ -1,0 +1,80 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.textarea {
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid $color-white;
+  border-radius: 2.75rem;
+  background-color: inherit;
+  width: 50.875rem;
+  height: 8.75rem;
+  resize: none;
+  @include fontSettings($font-size-sm, $font-regular, $color-txt);
+  padding: 1.25rem;
+
+  &::placeholder {
+    @include fontSettings($font-size-xl, $font-regular, $color-txt);
+  }
+
+  &:focus {
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-txt-gray);
+    }
+  }
+
+  &_error {
+    border: 1px solid $color-red;
+    &::placeholder {
+      @include fontSettings($font-size-base, $font-regular, $color-red);
+    }
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.active {
+  @include fontSettings($font-size-xs, $font-regular, $color-black);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-2.125rem);
+  border-radius: 0.9375rem;
+  background-color: $color-white;
+  padding: 0.3125rem 1.25rem;
+
+  &_error {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}
+
+.label {
+  position: absolute;
+
+  top: 1.4375rem;
+  left: 2.1875rem;
+  transition:
+    transform 0.3s ease-out,
+    font-size 0.3s ease-out;
+  pointer-events: none;
+}
+
+.error {
+  margin-top: 0.625rem;
+  margin-left: 1.25rem;
+  @include fontSettings($font-size-xs, $font-regular, $color-red);
+}

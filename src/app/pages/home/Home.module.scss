@@ -1,0 +1,200 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.wrapperContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 4.375rem 0 2.5rem;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  & main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 2%;
+
+    & p {
+      margin-top: 2.1875rem;
+      background: linear-gradient(102deg, #a3cb38 3.99%, #81aa12 85.98%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-style: normal;
+      font-weight: $font-semi-bold;
+      font-size: 5.95rem;
+      line-height: normal;
+      font-family: $font-urw;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.title {
+  margin-top: 2.1875rem;
+  background: linear-gradient(102deg, #a3cb38 3.99%, #81aa12 85.98%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-style: normal;
+  font-weight: $font-semi-bold;
+  font-size: 31.308px;
+  line-height: normal;
+  font-family: $font-urw;
+  -webkit-text-fill-color: transparent;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 3.75rem;
+}
+
+.link {
+  @include fontSettings($font-size-2xl, $font-regular, $color-txt);
+
+  @include phones {
+    font-size: 40px;
+  }
+}
+
+.logo {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 48.74vw;
+  height: 56.2vh;
+
+  @include phones {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 40%;
+    width: 100vw;
+    height: fit-content;
+  }
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  &_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  &_center {
+    display: flex;
+    align-self: center;
+  }
+
+  &_line {
+    position: absolute;
+    left: 1%;
+    opacity: 0;
+    animation:
+      moveLine 5s infinite,
+      opacityLine 5s infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    background: linear-gradient(
+      0deg,
+      #a3cb38 4.96%,
+      rgba(163, 203, 56, 0) 55.77%
+    );
+    width: 98%;
+    height: 4.0625rem;
+  }
+}
+
+.finger {
+  position: relative;
+
+  &_scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: scan 5s infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+  @include fontSettings($font-size-2xl, $font-regular, $color-green);
+
+  @include phones {
+    padding-bottom: 0;
+  }
+
+  & p {
+    @include fontSettings($font-size-lg, $font-regular, $color-txt);
+    width: 80%;
+
+    @include phones {
+      padding-bottom: 4rem;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes scan {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes moveLine {
+  from {
+    top: -4%;
+  }
+
+  to {
+    top: 88%;
+  }
+}
+
+@keyframes opacityLine {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

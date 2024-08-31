@@ -1,0 +1,6 @@
+node_modules
+build
+dist
+package.json
+/src/asstes/*
+src/locales/*

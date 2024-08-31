@@ -1,0 +1,19 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+@import 'src/app/styles/mixins.scss';
+
+.toggle {
+  @include fontSettings($font-size-xl, $font-regular, $color-txt-dark);
+
+  &_active {
+    color: $color-txt;
+  }
+
+  & span {
+    cursor: pointer;
+  }
+
+  @include phones {
+    font-size: 18px;
+  }
+}

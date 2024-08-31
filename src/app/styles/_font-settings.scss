@@ -1,0 +1,9 @@
+@import 'src/app/styles/variables.scss';
+
+@mixin fontSettings($fontSize, $fontWeight, $fontColor) {
+  color: $fontColor;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: normal;
+  font-family: $font-rs;
+}

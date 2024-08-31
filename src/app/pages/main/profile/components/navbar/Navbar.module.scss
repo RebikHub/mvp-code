@@ -1,0 +1,27 @@
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/font-settings';
+
+.menu {
+  display: flex;
+  place-content: center;
+  gap: 0.625rem;
+  padding: 0;
+}
+
+.item {
+  padding: 0.9375rem 1.25rem;
+  list-style: none;
+  @include fontSettings($font-size-base, $font-regular, $color-txt);
+
+  &_active {
+    box-shadow: 0px 0px 3px $color-white;
+    border: 1px solid $color-white;
+    border-radius: 2.25rem;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
